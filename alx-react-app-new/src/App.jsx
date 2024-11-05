@@ -2,16 +2,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-// src/App.jsx
 import React from 'react';
-import UserProfile from './components/UserProfile';
+import Counter from './Counter';
 
 function App() {
-    return (
-        <div>
-            <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
-        </div>
-    );
+  return (
+    <div className="App">
+      <h1>Counter Application</h1>
+      <Counter />
+    </div>
+  );
 }
 
 export default App;
