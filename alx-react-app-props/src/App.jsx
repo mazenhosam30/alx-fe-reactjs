@@ -1,7 +1,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
-import React from 'react';
+// App.jsx
 import ProfilePage from './ProfilePage';
 import UserContext from './UserContext';
 
@@ -16,4 +16,3 @@ function App() {
 }
 
 export default App;
-
