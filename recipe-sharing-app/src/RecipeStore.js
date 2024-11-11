@@ -1,10 +1,22 @@
+// src/components/RecipeList.js
+import { useRecipeStore } from '../recipeStore';
+import { Link } from 'react-router-dom';
 
-import create from 'zustand';
+const RecipeList = () => {
+  const recipes = useRecipeStore((state) => state.recipes);
 
-const useRecipeStore = create(set => ({
-  recipes: [],
-  addRecipe: (newRecipe) => set(state => ({ recipes: [...state.recipes, newRecipe] })),
-  setRecipes: (recipes) => set({ recipes })
-}));
+  return (
+    <div>
+      {recipes.map((recipe) => (
+        <div key={recipe.id}>
+          <h3>
+            <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
+          </h3>
+          <p>{recipe.description}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default useRecipeStore;
+export default RecipeList;
