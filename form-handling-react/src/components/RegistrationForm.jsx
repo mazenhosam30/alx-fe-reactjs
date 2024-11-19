@@ -16,7 +16,9 @@ const RegistrationForm = () => {
         if (!formData.username) newErrors.username = "Username is required.";
         if (!formData.email) newErrors.email = "Email is required.";
         if (!formData.password) newErrors.password = "Password is required.";
-
+        if (!username)
+        if (!email)
+        if (!password)
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
         } else {
@@ -43,6 +45,7 @@ const RegistrationForm = () => {
             </div>
             <div>
             "value={username}", "value={email}", "value={password}"
+           
             </div>
             <button type="submit">Register</button>
         </form>
