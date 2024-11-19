@@ -40,5 +40,3 @@ const formikForm = () => {
         </Formik>
     );
 };
-
-export default formikForm;
