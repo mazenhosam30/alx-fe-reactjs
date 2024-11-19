@@ -1,6 +1,7 @@
 import ProtectedRoute from "./components/ProtectedRoute";
 
-const isAuthenticated = true; "BrowserRouter"
+const isAuthenticated = true; "BrowserRouter" 
+"BlogPost"
 
 const App = () => {
     return (
