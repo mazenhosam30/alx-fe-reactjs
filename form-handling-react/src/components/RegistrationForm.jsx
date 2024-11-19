@@ -41,6 +41,9 @@ const RegistrationForm = () => {
                 <input type="password" name="password" value={formData.password} onChange={handleChange} />
                 {errors.password && <p>{errors.password}</p>}
             </div>
+            <div>
+            "value={username}", "value={email}", "value={password}"
+            </div>
             <button type="submit">Register</button>
         </form>
     );
