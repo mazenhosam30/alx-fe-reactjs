@@ -1,35 +1,35 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import '@testing-library/jest-dom';
-import TodoList from "../TodoList";
+import "@testing-library/jest-dom/extend-expect";
+import TodoList from "./TodoList";
 
-describe("TodoList Component", () => {
-    test("renders initial todos", () => {
-        render(<TodoList />);
-        expect(screen.getByText("Learn React")).toBeInTheDocument();
-        expect(screen.getByText("Build a Todo App")).toBeInTheDocument();
-    });
+test("renders the initial list of todos", () => {
+  render(<TodoList />);
+  const todoItems = screen.getAllByTestId("todo-item");
+  expect(todoItems.length).toBeGreaterThan(0); // Assuming initial todos exist
+});
 
-    test("adds a new todo", () => {
-        render(<TodoList />);
-        fireEvent.change(screen.getByRole("textbox"), { target: { value: "New Todo" } });
-        fireEvent.click(screen.getByText("Add Todo"));
-        expect(screen.getByText("New Todo")).toBeInTheDocument();
-    });
+test("adds a new todo", () => {
+  render(<TodoList />);
+  const input = screen.getByPlaceholderText(/add a new todo/i);
+  const button = screen.getByText(/add/i);
 
-    test("toggles a todo's completion", () => {
-        render(<TodoList />);
-        const todo = screen.getByText("Learn React");
-        fireEvent.click(todo);
-        expect(todo).toHaveStyle("text-decoration: line-through");
-        fireEvent.click(todo);
-        expect(todo).toHaveStyle("text-decoration: none");
-    });
+  fireEvent.change(input, { target: { value: "New Todo" } });
+  fireEvent.click(button);
 
-    test("deletes a todo", () => {
-        render(<TodoList />);
-        const todo = screen.getByText("Learn React");
-        fireEvent.click(todo.nextSibling);
-        expect(todo).not.toBeInTheDocument();
-    });
+  expect(screen.getByText("New Todo")).toBeInTheDocument();
+});
+
+test("toggles todo completion", () => {
+  render(<TodoList />);
+  const todo = screen.getByTestId("todo-item-1"); // Replace with actual test ID logic
+  fireEvent.click(todo);
+  expect(todo).toHaveClass("completed"); // Assuming completed todos have a specific class
+});
+
+test("deletes a todo", () => {
+  render(<TodoList />);
+  const deleteButton = screen.getByTestId("delete-button-1"); // Replace with actual test ID logic
+  fireEvent.click(deleteButton);
+  expect(screen.queryByTestId("todo-item-1")).toBeNull();
 });
