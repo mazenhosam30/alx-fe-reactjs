@@ -6,3 +6,5 @@ module.exports = {
   },
   plugins: [], // Add plugins if needed
 };
+
+["purge", "darkMode", "variants"]
