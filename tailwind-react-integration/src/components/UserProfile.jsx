@@ -11,7 +11,7 @@ function UserProfile() {
       <h1 className="text-lg sm:text-xl md:text-2xl text-blue-800 my-4 text-center sm:p-4 md:text-xl">
         John Doe
       </h1>
-      <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center">
+      <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center sm:w-24 sm:h-24">
         Developer at Example Co. Loves to write code and explore new technologies.
       </p>
     </div>
