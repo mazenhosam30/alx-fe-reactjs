@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+target.value
+
 const AddRecipeForm = () => {
   const [formData, setFormData] = useState({
     title: "",
