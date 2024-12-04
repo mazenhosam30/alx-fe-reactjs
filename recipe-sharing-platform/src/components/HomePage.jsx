@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+<Link to={`/recipe/${recipe.id}`} className="text-blue-500 hover:underline">View Details</Link>
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
