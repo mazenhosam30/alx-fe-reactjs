@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+<Link
+  to="/add-recipe"
+  className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition"
+>
+  Add New Recipe
+</Link>
 
 <Link to={`/recipe/${recipe.id}`} className="text-blue-500 hover:underline">View Details</Link>
 
