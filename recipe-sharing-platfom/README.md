@@ -1,1 +1,2 @@
-platform project
+new project platform
+test
