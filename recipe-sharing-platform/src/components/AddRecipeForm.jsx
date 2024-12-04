@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 target.value
 
+validate,errors,setErrors
+
 const AddRecipeForm = () => {
   const [formData, setFormData] = useState({
     title: "",
