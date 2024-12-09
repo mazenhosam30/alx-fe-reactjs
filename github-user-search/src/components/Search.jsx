@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { fetchAdvancedSearchResults } from "../services/githubService";
 import { fetchUsers } from '../services/githubService';
 
+
+"fetchUserData"
+
 // Example: Call the function with advanced search criteria
 const handleSearch = async () => {
   const searchParams = {
