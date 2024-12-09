@@ -1,5 +1,23 @@
 import React, { useState } from "react";
 import { fetchAdvancedSearchResults } from "../services/githubService";
+import { fetchUsers } from '../services/githubService';
+
+// Example: Call the function with advanced search criteria
+const handleSearch = async () => {
+  const searchParams = {
+    username: 'john',
+    location: 'San Francisco',
+    minRepos: 10,
+  };
+  
+  try {
+    const data = await fetchUsers(searchParams);
+    console.log(data); // Display search results
+  } catch (error) {
+    console.error('Error fetching users:', error);
+  }
+};
+
 
 const Search = () => {
     const [formData, setFormData] = useState({
@@ -31,6 +49,8 @@ const Search = () => {
             setLoading(false);
         }
     };
+
+
 
     return (
         <div className="search-container max-w-4xl mx-auto p-4">
