@@ -40,8 +40,11 @@ const Search = () => {
             {error && <p style={{ color: "red" }}>{error}</p>}
             {userData && (
                 <div className="user-details">
-                    <img src={userData.avatar_url} alt={`${userData.name}'s avatar`} width="100" />
+                    <img src={userData.avatar_url} alt={`${userData.login}'s avatar`} width="100" />
                     <h2>{userData.name || "No Name Provided"}</h2>
+                    <p>
+                        <strong>Username:</strong> {userData.login}
+                    </p>
                     <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
                         View Profile
                     </a>
