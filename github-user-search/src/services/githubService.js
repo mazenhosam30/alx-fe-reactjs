@@ -2,6 +2,9 @@ import axios from 'axios';
 
 const BASE_URL = 'https://api.github.com/search/users';
 
+
+"https://api.github.com/search/users?q"
+
 /**
  * Fetches users from GitHub based on the query parameters.
  * @param {Object} params - Query parameters including username, location, and minRepos.
